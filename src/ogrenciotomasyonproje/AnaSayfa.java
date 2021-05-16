@@ -51,7 +51,7 @@ public class AnaSayfa extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         Dersler_btn.setBackground(new java.awt.Color(255, 255, 255));
-        Dersler_btn.setIcon(new javax.swing.ImageIcon("C:\\Users\\fatih\\OneDrive\\Belgeler\\NetBeansProjects\\OgrenciOtomasyonProje\\img\\Dersler.png")); // NOI18N
+        Dersler_btn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ogrenciotomasyonproje/img/Dersler.png"))); // NOI18N
         Dersler_btn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Dersler_btnActionPerformed(evt);
@@ -59,7 +59,7 @@ public class AnaSayfa extends javax.swing.JFrame {
         });
 
         Ogretmenler_Btn.setBackground(new java.awt.Color(255, 255, 255));
-        Ogretmenler_Btn.setIcon(new javax.swing.ImageIcon("C:\\Users\\fatih\\OneDrive\\Belgeler\\NetBeansProjects\\OgrenciOtomasyonProje\\img\\Ogretmenler.png")); // NOI18N
+        Ogretmenler_Btn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ogrenciotomasyonproje/img/Ogretmenler.png"))); // NOI18N
         Ogretmenler_Btn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Ogretmenler_BtnActionPerformed(evt);
@@ -67,7 +67,7 @@ public class AnaSayfa extends javax.swing.JFrame {
         });
 
         Ogrenciler_btn.setBackground(new java.awt.Color(255, 255, 255));
-        Ogrenciler_btn.setIcon(new javax.swing.ImageIcon("C:\\Users\\fatih\\OneDrive\\Belgeler\\NetBeansProjects\\OgrenciOtomasyonProje\\img\\Ogenciler.png")); // NOI18N
+        Ogrenciler_btn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ogrenciotomasyonproje/img/Ogenciler.png"))); // NOI18N
         Ogrenciler_btn.setPreferredSize(new java.awt.Dimension(117, 91));
         Ogrenciler_btn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -76,7 +76,7 @@ public class AnaSayfa extends javax.swing.JFrame {
         });
 
         Siniflar_btn.setBackground(new java.awt.Color(255, 255, 255));
-        Siniflar_btn.setIcon(new javax.swing.ImageIcon("C:\\Users\\fatih\\OneDrive\\Belgeler\\NetBeansProjects\\OgrenciOtomasyonProje\\img\\Siniflar.png")); // NOI18N
+        Siniflar_btn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ogrenciotomasyonproje/img/Siniflar.png"))); // NOI18N
         Siniflar_btn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Siniflar_btnActionPerformed(evt);
@@ -108,9 +108,9 @@ public class AnaSayfa extends javax.swing.JFrame {
                 .addComponent(jLabel3)
                 .addGap(105, 105, 105)
                 .addComponent(jLabel5)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(117, 117, 117)
                 .addComponent(jLabel4)
-                .addGap(88, 88, 88))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -126,7 +126,7 @@ public class AnaSayfa extends javax.swing.JFrame {
         );
 
         OBS_btn.setBackground(new java.awt.Color(255, 255, 255));
-        OBS_btn.setIcon(new javax.swing.ImageIcon("C:\\Users\\fatih\\OneDrive\\Belgeler\\NetBeansProjects\\OgrenciOtomasyonProje\\img\\OBS.png")); // NOI18N
+        OBS_btn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ogrenciotomasyonproje/img/OBS.png"))); // NOI18N
         OBS_btn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 OBS_btnActionPerformed(evt);
@@ -149,7 +149,7 @@ public class AnaSayfa extends javax.swing.JFrame {
                 .addComponent(Ogretmenler_Btn, javax.swing.GroupLayout.PREFERRED_SIZE, 144, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(OBS_btn)
-                .addContainerGap(20, Short.MAX_VALUE))
+                .addContainerGap(112, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
