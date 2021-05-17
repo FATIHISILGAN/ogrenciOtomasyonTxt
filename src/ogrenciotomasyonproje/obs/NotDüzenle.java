@@ -3,16 +3,15 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package ogrenciotomasyonproje.ogretmenler;
+package ogrenciotomasyonproje.obs;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.FileWriter;
+import java.io.IOException;
 import java.io.PrintWriter;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 import ogrenciotomasyonproje.ogrenciler.OgrenciListele;
@@ -21,12 +20,12 @@ import ogrenciotomasyonproje.ogrenciler.OgrenciListele;
  *
  * @author fatih
  */
-public class OgretmenSil extends javax.swing.JFrame {
+public class NotDüzenle extends javax.swing.JFrame {
 
     /**
-     * Creates new form OgretmenSil
+     * Creates new form NotDüzenle
      */
-    public OgretmenSil() {
+    public NotDüzenle() {
         initComponents();
     }
 
@@ -39,18 +38,28 @@ public class OgretmenSil extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        listele_btn = new javax.swing.JButton();
-        don_btn = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
-        sil_btn = new javax.swing.JButton();
+        yenile_btn = new javax.swing.JButton();
+        don_btn = new javax.swing.JButton();
+        güncelle_btn = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        listele_btn.setText("Yenile");
-        listele_btn.addActionListener(new java.awt.event.ActionListener() {
+        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "dersNotu", "notNo", "dersİd", "öğretmenİd", "öğrenciİd"
+            }
+        ));
+        jScrollPane1.setViewportView(jTable1);
+
+        yenile_btn.setText("Yenile");
+        yenile_btn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                listele_btnActionPerformed(evt);
+                yenile_btnActionPerformed(evt);
             }
         });
 
@@ -61,20 +70,10 @@ public class OgretmenSil extends javax.swing.JFrame {
             }
         });
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-
-            },
-            new String [] {
-                "Öğretmenİd", "ÖğretmenKullaniciAd", "ÖğretmenParola", "ÖğretmenAd", "ÖğretmenSoyad", "DoğumTarihi", "Branşİd"
-            }
-        ));
-        jScrollPane1.setViewportView(jTable1);
-
-        sil_btn.setText("Sil");
-        sil_btn.addActionListener(new java.awt.event.ActionListener() {
+        güncelle_btn.setText("Güncelle");
+        güncelle_btn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                sil_btnActionPerformed(evt);
+                güncelle_btnActionPerformed(evt);
             }
         });
 
@@ -83,21 +82,20 @@ public class OgretmenSil extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(don_btn)
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(listele_btn)
-                        .addGap(18, 18, 18)
-                        .addComponent(sil_btn)
-                        .addGap(224, 224, 224))))
+                        .addContainerGap()
+                        .addComponent(don_btn))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(45, 45, 45)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 512, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(0, 0, Short.MAX_VALUE))
             .addGroup(layout.createSequentialGroup()
-                .addGap(39, 39, 39)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 531, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 24, Short.MAX_VALUE))
+                .addGap(198, 198, 198)
+                .addComponent(yenile_btn)
+                .addGap(80, 80, 80)
+                .addComponent(güncelle_btn)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -105,25 +103,21 @@ public class OgretmenSil extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(don_btn)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 54, Short.MAX_VALUE)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 238, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(listele_btn)
-                    .addComponent(sil_btn))
-                .addContainerGap())
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 178, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(yenile_btn)
+                    .addComponent(güncelle_btn))
+                .addGap(5, 5, 5))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void listele_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_listele_btnActionPerformed
+    private void yenile_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_yenile_btnActionPerformed
         FileReader fileReader = null;
-    
         try {
-            fileReader = new FileReader("ogretmenler.txt");
-        } catch (FileNotFoundException ex) {
-            Logger.getLogger(OgretmenSil.class.getName()).log(Level.SEVERE, null, ex);
-        }
+            fileReader = new FileReader("obs.txt");
             BufferedReader br = new BufferedReader(fileReader);//dosyayı oluştur
             DefaultTableModel tableModel = (DefaultTableModel) jTable1.getModel();
 
@@ -139,29 +133,32 @@ public class OgretmenSil extends javax.swing.JFrame {
                 String[] dataRow = line.split("/");
                 tableModel.addRow(dataRow);
             }
-      
-    }//GEN-LAST:event_listele_btnActionPerformed
+        } catch (FileNotFoundException ex) {
+            java.util.logging.Logger.getLogger(OgrenciListele.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } finally {
+            try {
+                fileReader.close();
+            } catch (IOException ex) {
+                java.util.logging.Logger.getLogger(OgrenciListele.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            }
+        }
+    }//GEN-LAST:event_yenile_btnActionPerformed
 
     private void don_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_don_btnActionPerformed
-        Ogretmenler ogretmenler = new Ogretmenler();
-        ogretmenler.setVisible(true);
+
+        Obs obs = new Obs();
+        obs.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_don_btnActionPerformed
 
-    private void sil_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sil_btnActionPerformed
-             DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
+    private void güncelle_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_güncelle_btnActionPerformed
+           DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
         // get selected row index
-        try {
-            int SelectedRowIndex = jTable1.getSelectedRow();
-            model.removeRow(SelectedRowIndex);
-        } catch (Exception ex) {
-            JOptionPane.showMessageDialog(null, ex);
-        }
-    
-        
+       
+
         try
         {
-            BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter("ogretmenler.txt"));
+            BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter("obs.txt"));
             PrintWriter fileWriter = new PrintWriter(bufferedWriter);
 
             for(int i=0; i<model.getRowCount(); ++i)
@@ -175,12 +172,12 @@ public class OgretmenSil extends javax.swing.JFrame {
                 fileWriter.println("");
             }
             fileWriter.close();
-            JOptionPane.showMessageDialog(null, "Silindi");
+            JOptionPane.showMessageDialog(null, "Güncellendi");
         }catch(Exception ex)
         {
             JOptionPane.showMessageDialog(null, "Hata");
-        }        
-    }//GEN-LAST:event_sil_btnActionPerformed
+        }
+    }//GEN-LAST:event_güncelle_btnActionPerformed
 
     /**
      * @param args the command line arguments
@@ -199,29 +196,29 @@ public class OgretmenSil extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(OgretmenSil.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(NotDüzenle.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(OgretmenSil.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(NotDüzenle.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(OgretmenSil.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(NotDüzenle.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(OgretmenSil.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(NotDüzenle.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new OgretmenSil().setVisible(true);
+                new NotDüzenle().setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton don_btn;
+    private javax.swing.JButton güncelle_btn;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTable1;
-    private javax.swing.JButton listele_btn;
-    private javax.swing.JButton sil_btn;
+    private javax.swing.JButton yenile_btn;
     // End of variables declaration//GEN-END:variables
 }

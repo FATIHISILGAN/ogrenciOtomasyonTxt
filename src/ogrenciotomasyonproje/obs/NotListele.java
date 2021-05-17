@@ -3,28 +3,25 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package ogrenciotomasyonproje.siniflar;
+package ogrenciotomasyonproje.obs;
 
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
-import java.lang.System.Logger;
-import java.lang.System.Logger.Level;
 import javax.swing.table.DefaultTableModel;
-import ogrenciotomasyonproje.dersler.DersListele;
 import ogrenciotomasyonproje.ogrenciler.OgrenciListele;
 
 /**
  *
  * @author fatih
  */
-public class SinifListele extends javax.swing.JFrame {
+public class NotListele extends javax.swing.JFrame {
 
     /**
-     * Creates new form SinifListele
+     * Creates new form NotListele
      */
-    public SinifListele() {
+    public NotListele() {
         initComponents();
     }
 
@@ -37,17 +34,27 @@ public class SinifListele extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        listele_btn = new javax.swing.JButton();
-        don_btn = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
+        yenile_btn = new javax.swing.JButton();
+        don_btn = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        listele_btn.setText("Yenile");
-        listele_btn.addActionListener(new java.awt.event.ActionListener() {
+        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "dersNotu", "notNo", "dersİd", "öğretmenİd", "öğrenciİd"
+            }
+        ));
+        jScrollPane1.setViewportView(jTable1);
+
+        yenile_btn.setText("Yenile");
+        yenile_btn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                listele_btnActionPerformed(evt);
+                yenile_btnActionPerformed(evt);
             }
         });
 
@@ -58,60 +65,50 @@ public class SinifListele extends javax.swing.JFrame {
             }
         });
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-
-            },
-            new String [] {
-                "Sinifİd", "sube", "mevcutKisi", "ogretmenİd"
-            }
-        ));
-        jScrollPane1.setViewportView(jTable1);
-
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(don_btn))
+                        .addGap(0, 85, Short.MAX_VALUE)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 512, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(86, 86, 86))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(63, 63, 63)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 589, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(331, 331, 331)
-                        .addComponent(listele_btn)))
-                .addContainerGap(79, Short.MAX_VALUE))
+                        .addComponent(don_btn)
+                        .addGap(0, 0, Short.MAX_VALUE))))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(314, 314, 314)
+                .addComponent(yenile_btn)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(don_btn)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 248, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(listele_btn)
-                .addGap(18, 18, 18))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 63, Short.MAX_VALUE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 178, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(12, 12, 12)
+                .addComponent(yenile_btn))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void don_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_don_btnActionPerformed
-        Siniflar siniflar = new Siniflar();
-        siniflar.setVisible(true);
+       
+        Obs obs = new Obs();
+        obs.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_don_btnActionPerformed
 
-    private void listele_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_listele_btnActionPerformed
-      
-        
-         FileReader fileReader = null;
+    private void yenile_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_yenile_btnActionPerformed
+        FileReader fileReader = null;
         try {
-            fileReader = new FileReader("siniflar.txt");
+            fileReader = new FileReader("obs.txt");
             BufferedReader br = new BufferedReader(fileReader);//dosyayı oluştur
             DefaultTableModel tableModel = (DefaultTableModel) jTable1.getModel();
             
@@ -138,10 +135,7 @@ public class SinifListele extends javax.swing.JFrame {
             }
         }
       
-        
-            
-                  
-    }//GEN-LAST:event_listele_btnActionPerformed
+    }//GEN-LAST:event_yenile_btnActionPerformed
 
     /**
      * @param args the command line arguments
@@ -160,20 +154,20 @@ public class SinifListele extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(SinifListele.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(NotListele.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(SinifListele.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(NotListele.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(SinifListele.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(NotListele.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(SinifListele.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(NotListele.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new SinifListele().setVisible(true);
+                new NotListele().setVisible(true);
             }
         });
     }
@@ -182,6 +176,6 @@ public class SinifListele extends javax.swing.JFrame {
     private javax.swing.JButton don_btn;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTable1;
-    private javax.swing.JButton listele_btn;
+    private javax.swing.JButton yenile_btn;
     // End of variables declaration//GEN-END:variables
 }

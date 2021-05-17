@@ -6,6 +6,7 @@
 package ogrenciotomasyonproje;
 
 import ogrenciotomasyonproje.dersler.Dersler;
+import ogrenciotomasyonproje.obs.Obs;
 import ogrenciotomasyonproje.ogrenciler.Ogrenciler;
 import ogrenciotomasyonproje.ogretmenler.Ogretmenler;
 import ogrenciotomasyonproje.siniflar.Siniflar;
@@ -198,7 +199,9 @@ public class AnaSayfa extends javax.swing.JFrame {
     }//GEN-LAST:event_Siniflar_btnActionPerformed
 
     private void OBS_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_OBS_btnActionPerformed
-        // TODO add your handling code here:
+       Obs obs = new Obs();
+       obs.setVisible(true);
+       this.setVisible(false);
     }//GEN-LAST:event_OBS_btnActionPerformed
 
     /**

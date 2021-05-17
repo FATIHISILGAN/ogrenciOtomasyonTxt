@@ -1,8 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package ogrenciotomasyonproje.dersler;
 
 import java.io.BufferedReader;
@@ -19,10 +15,7 @@ import javax.swing.table.DefaultTableModel;
 import ogrenciotomasyonproje.AnaSayfa;
 import ogrenciotomasyonproje.ogrenciler.OgrenciListele;
 
-/**
- *
- * @author fatih
- */
+
 public class DersSil extends javax.swing.JFrame {
 
     /**
@@ -106,10 +99,10 @@ public class DersSil extends javax.swing.JFrame {
                 .addComponent(don_btn)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 13, Short.MAX_VALUE)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 251, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(Yenile_btn)
-                    .addComponent(sil_btn))
+                    .addComponent(sil_btn, javax.swing.GroupLayout.DEFAULT_SIZE, 28, Short.MAX_VALUE))
                 .addGap(25, 25, 25))
         );
 
@@ -144,7 +137,7 @@ public class DersSil extends javax.swing.JFrame {
                 fileWriter.println("");
             }
             fileWriter.close();
-            JOptionPane.showMessageDialog(null, "Güncellendi");
+            JOptionPane.showMessageDialog(null, "Silindi");
         }catch(Exception ex)
         {
             JOptionPane.showMessageDialog(null, "Hata");

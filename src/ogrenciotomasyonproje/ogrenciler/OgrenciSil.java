@@ -96,7 +96,7 @@ public class OgrenciSil extends javax.swing.JFrame {
                         .addGap(84, 84, 84)
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 564, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(287, 287, 287)
+                        .addGap(301, 301, 301)
                         .addComponent(yenile_btn)
                         .addGap(18, 18, 18)
                         .addComponent(sil_btn)))

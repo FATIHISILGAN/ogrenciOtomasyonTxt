@@ -33,6 +33,7 @@ public class Ogrenciler extends javax.swing.JFrame {
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu2 = new javax.swing.JMenu();
         jMenu3 = new javax.swing.JMenu();
+        jMenu6 = new javax.swing.JMenu();
         jMenu4 = new javax.swing.JMenu();
         jMenu5 = new javax.swing.JMenu();
 
@@ -55,6 +56,14 @@ public class Ogrenciler extends javax.swing.JFrame {
             }
         });
         jMenuBar1.add(jMenu3);
+
+        jMenu6.setText("ÖğrenciDüzenle");
+        jMenu6.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jMenu6MouseClicked(evt);
+            }
+        });
+        jMenuBar1.add(jMenu6);
 
         jMenu4.setText("ÖğrenciListele");
         jMenu4.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -113,6 +122,12 @@ public class Ogrenciler extends javax.swing.JFrame {
         this.setVisible(false);
     }//GEN-LAST:event_jMenu5MouseClicked
 
+    private void jMenu6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jMenu6MouseClicked
+      OgrenciDuzenle ogrenciDuzenle = new OgrenciDuzenle();
+      ogrenciDuzenle.setVisible(true);
+      this.setVisible(false);
+    }//GEN-LAST:event_jMenu6MouseClicked
+
     /**
      * @param args the command line arguments
      */
@@ -154,6 +169,7 @@ public class Ogrenciler extends javax.swing.JFrame {
     private javax.swing.JMenu jMenu3;
     private javax.swing.JMenu jMenu4;
     private javax.swing.JMenu jMenu5;
+    private javax.swing.JMenu jMenu6;
     private javax.swing.JMenuBar jMenuBar1;
     // End of variables declaration//GEN-END:variables
 }
